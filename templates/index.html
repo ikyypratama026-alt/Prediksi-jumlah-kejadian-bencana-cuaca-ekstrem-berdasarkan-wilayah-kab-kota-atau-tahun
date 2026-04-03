@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Prediksi Bencana</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Style -->
+    <style>
+        body {
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            min-height: 100vh;
+        }
+
+        .card {
+            border-radius: 15px;
+        }
+
+        .title {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .result-box {
+            background-color: #e9f7ef;
+            border-left: 5px solid #28a745;
+            padding: 15px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container d-flex justify-content-center align-items-center" style="min-height:100vh;">
+        <div class="card shadow p-4" style="width: 100%; max-width: 500px;">
+
+            <h3 class="text-center title mb-4">
+                🌪️ Prediksi Bencana Cuaca Ekstrem
+            </h3>
+
+            <form method="POST">
+                <div class="mb-3">
+                    <label class="form-label">Masukkan Tahun</label>
+                    <input type="number" name="tahun" class="form-control" placeholder="Contoh: 2025" required>
+                </div>
+
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary">
+                        🔍 Prediksi Sekarang
+                    </button>
+                </div>
+            </form>
+
+            {% if hasil %}
+            <div class="result-box mt-4">
+                <h5>📊 Hasil Prediksi:</h5>
+                <h3 class="text-success">{{ hasil }}</h3>
+                <p class="mb-0">Jumlah kejadian bencana cuaca ekstrem</p>
+            </div>
+            {% endif %}
+
+            <hr>
+
+            <p class="text-center text-muted small">
+                Dibuat dengan Flask & Machine Learning
+            </p>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
